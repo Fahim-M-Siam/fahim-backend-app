@@ -3,6 +3,7 @@ os: linux
 files:
   - source: /
     destination: /home/ec2-user/app
+    overwrite: true
 hooks:
   BeforeInstall:
     - location: scripts/before_install.sh
@@ -13,6 +14,6 @@ hooks:
       timeout: 300
       runas: root
   ApplicationStart:
-    - location: scripts/start_app.sh
+    - location: scripts/application_start.sh
       timeout: 300
       runas: root

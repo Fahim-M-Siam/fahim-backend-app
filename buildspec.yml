@@ -1,12 +1,19 @@
 version: 0.2
 phases:
   install:
+    runtime-versions:
+      nodejs: 18
     commands:
       - echo Installing dependencies...
-      - pip install flask
+      - npm install
   build:
     commands:
-      - echo Build started
+      - echo Build started on `date`
+      - echo Nothing to compile for Node.js
+  post_build:
+    commands:
+      - echo Build completed on `date`
 artifacts:
   files:
-    - '**/*'
+    - "**/*"
+  discard-paths: no
